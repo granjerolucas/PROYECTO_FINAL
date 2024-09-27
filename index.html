@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="./js/main.js" type="module"></script>
   </head>
 
   <body>
@@ -38,7 +39,7 @@
                         >Clear All</span
                       >
                     </div>
-                    <form class="mt-4 pt-2">
+                    <form class="mt-4 pt-2" id="formCalculator" novalidate>
                       <div class="mb-4">
                         <label for="amount" class="form-label"
                           >Mortgage Amount</label
@@ -52,8 +53,10 @@
                           <input
                             type="text"
                             id="amount"
-                            class="form-control fw-700"
-                            value="300,000"
+                            name="amount"
+                            class="form-control fw-700 control-number"
+                            value=""
+                            required
                           />
                         </div>
                       </div>
@@ -66,9 +69,11 @@
                             <div class="input-group mb-3 input-group-lg">
                               <input
                                 type="text"
-                                class="form-control fw-700"
+                                class="form-control fw-700 control-number"
                                 id="term"
-                                value="25"
+                                name="term"
+                                value=""
+                                required
                               />
                               <span
                                 class="input-group-text fw-700"
@@ -86,9 +91,11 @@
                             <div class="input-group mb-3 input-group-lg">
                               <input
                                 type="text"
-                                class="form-control fw-700"
+                                class="form-control fw-700 control-number"
                                 id="interest"
-                                value="5.25"
+                                name="interest"
+                                value=""
+                                required
                               />
                               <span
                                 class="input-group-text fw-700"
@@ -104,7 +111,9 @@
                         <label for="repayment" class="form-label"
                           >Mortgage Type</label
                         >
-                        <div class="container-form-check  border border-default rounded-2 px-3 mb-2">
+                        <div
+                          class="container-form-check border border-default rounded-2 px-3 mb-2"
+                        >
                           <div
                             class="form-check align-content-center form-control-lg"
                           >
@@ -113,16 +122,20 @@
                               type="radio"
                               name="mortgage-type"
                               id="repayment"
+                              value="repayment"
+                              required
                             />
                             <label
                               class="form-check-label ms-1 fw-700"
                               for="repayment"
                             >
                               Repayment
-                            </label>
+                            </label> 
                           </div>
                         </div>
-                        <div class="container-form-check border border-default rounded-2 px-3">
+                        <div
+                          class="container-form-check border border-default rounded-2 px-3"
+                        >
                           <div
                             class="form-check align-content-center form-control-lg"
                           >
@@ -131,6 +144,8 @@
                               type="radio"
                               name="mortgage-type"
                               id="interest-only"
+                              value="interest-only"
+                              required
                             />
                             <label
                               class="form-check-label ms-1 fw-700"
