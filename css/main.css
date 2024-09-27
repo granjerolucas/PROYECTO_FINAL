@@ -9,15 +9,30 @@
   --slate-900: hsl(202, 55%, 16%);
 }
 
+.color-slate-700 {
+  color: var(--slate-700);
+}
+.color-slate-500 {
+  color: var(--slate-500);
+}
+.color-slate-300 {
+  color: var(--slate-300);
+}
+.color-slate-900 {
+  color: var(--slate-900);
+}
+.bg-color-slate-900 {
+  background-color: var(--slate-900);
+}
 * {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
+  color: var(--slate-900);
 }
 
 body {
   background-color: var(--slate-100);
 }
-
 
 .form-check {
   height: 3rem;
@@ -26,14 +41,78 @@ body {
   }
 }
 .border-default {
-  border-color:  var(--slate-300) !important;
+  border-color: var(--slate-700) !important;
 }
 
 .input-group {
-  input, span {
-    border-color: var(--slate-300);
+  input,
+  span {
+    border-color: var(--slate-700);
   }
   .input-group-text {
     font-size: 1.1rem;
+  }
+}
+
+.panel-result {
+  color: var(--white);
+  border-bottom-left-radius: calc(var(--bs-border-radius-xxl) * 2) !important;
+  padding: 2rem;
+  .result-content-home {
+    img {
+      height: 12rem;
+    }
+  }
+}
+
+.app-calculator {
+  color: var(--slate-900);
+
+  /* color: var(--slate-700) !important; */
+  .input-group-text,
+  .form-label {
+    color: var(--slate-700);
+  }
+
+  .form-check-input,
+  .form-check-input {
+    border-color: var(--slate-700);
+  }
+  form button[type="submit"] {
+    font-size: 1.2rem;
+    padding: 0.8rem 2.5rem;
+    letter-spacing: -0.04rem;
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--color-lime);
+    color: var(--slate-900);
+    border-color: var(--slate-300);
+  }
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .container-card {
+      max-width: 63rem;
+      .card-body {
+        .p-5 {
+          padding: 2.6rem 2.4rem !important;
+        }
+      }
+    }
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+  }
+
+  /* X-Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+  }
+
+  /* XX-Large devices (larger desktops, 1400px and up) */
+  @media (min-width: 1400px) {
   }
 }

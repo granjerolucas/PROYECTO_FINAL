@@ -20,130 +20,158 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row justify-content-center vh-100 align-items-center">
-        <div class="col-md-10">
+    <div class="container app-calculator">
+      <div class="d-flex justify-content-center vh-100 align-items-center">
+        <div class="container-card">
           <div class="card mb-3 rounded-5">
-            <div class="card-body p-5">
-              <div class="row">
-                <div class="col-md-6">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <h5 class="card-title fs-4 fw-bold">Mortgage Calculator</h5>
-                    <span class="text-decoration-underline">Clear All</span>
-                  </div>
-                  <form>
-                    <div class="mb-4">
-                      <label for="amount" class="form-label"
-                        >Mortgage Amount</label
+            <div class="card-body p-0">
+              <div class="row m-0">
+                <div class="col-md-6 p-0">
+                  <div class="p-5">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <h5 class="card-title fs-4 fw-bold color-slate-900">
+                        Mortgage Calculator
+                      </h5>
+                      <span class="text-decoration-underline color-slate-900"
+                        >Clear All</span
                       >
-                      <div class="input-group mb-3 input-group-lg">
-                        <span class="input-group-text fw-bold" id="basic-addon1"
-                          >£</span
+                    </div>
+                    <form class="mt-4 pt-2">
+                      <div class="mb-4">
+                        <label for="amount" class="form-label"
+                          >Mortgage Amount</label
                         >
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="mb-4">
-                          <label for="term" class="form-label"
-                            >Mortgage Term</label
+                        <div class="input-group mb-3 input-group-lg">
+                          <span
+                            class="input-group-text fw-bold"
+                            id="basic-addon1"
+                            >£</span
                           >
-                          <div class="input-group mb-3 input-group-lg">
-                            <input type="text" class="form-control" id="term" />
-                            <span
-                              class="input-group-text fw-bold"
-                              id="basic-addon2"
-                              >years</span
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="mb-4">
+                            <label for="term" class="form-label"
+                              >Mortgage Term</label
                             >
+                            <div class="input-group mb-3 input-group-lg">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="term"
+                              />
+                              <span
+                                class="input-group-text fw-bold"
+                                id="basic-addon2"
+                                >years</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="mb-4">
+                            <label for="interest" class="form-label"
+                              >Interest Rate</label
+                            >
+                            <div class="input-group mb-3 input-group-lg">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="interest"
+                              />
+                              <span
+                                class="input-group-text fw-bold"
+                                id="basic-addon2"
+                                >%</span
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6">
-                        <div class="mb-4">
-                          <label for="interest" class="form-label"
-                            >Interest Rate</label
-                          >
-                          <div class="input-group mb-3 input-group-lg">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="interest"
-                            />
-                            <span
-                              class="input-group-text fw-bold"
-                              id="basic-addon2"
-                              >%</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
 
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"
-                        >Mortgage Type</label
-                      >
-                      <div class="border border-default rounded-2 px-3 mb-2">
-                        <div
-                          class="form-check align-content-center form-control-lg"
+                      <div class="mb-5">
+                        <label for="exampleInputPassword1" class="form-label"
+                          >Mortgage Type</label
                         >
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                          <label
-                            class="form-check-label ms-1 fw-bold"
-                            for="flexRadioDefault1"
+                        <div class="border border-default rounded-2 px-3 mb-2">
+                          <div
+                            class="form-check align-content-center form-control-lg"
                           >
-                            Repayment
-                          </label>
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="mortgage-type"
+                              id="repayment"
+                            />
+                            <label
+                              class="form-check-label ms-1 fw-bold"
+                              for="repayment"
+                            >
+                              Repayment
+                            </label>
+                          </div>
+                        </div>
+                        <div class="border border-default rounded-2 px-3">
+                          <div
+                            class="form-check align-content-center form-control-lg"
+                          >
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="mortgage-type"
+                              id="interest-only"
+                            />
+                            <label
+                              class="form-check-label ms-1 fw-bold"
+                              for="interest-only"
+                            >
+                              Interest Only
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <div class="border border-default rounded-2 px-3">
-                        <div
-                          class="form-check align-content-center form-control-lg"
-                        >
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
-                          />
-                          <label
-                            class="form-check-label ms-1 fw-bold"
-                            for="flexRadioDefault1"
-                          >
-                            Interest Only
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input
-                        type="checkbox"
-                        class="form-check-input me-1"
-                        id="exampleCheck1"
-                      />
-                      <label class="form-check-label" for="exampleCheck1"
-                        >Check me out</label
+
+                      <button
+                        type="submit"
+                        class="btn btn-primary rounded-5 btn-lg"
                       >
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                      Submit
-                    </button>
-                  </form>
+                        <img
+                          src="./img/icon-calculator.svg"
+                          alt=""
+                          class="me-2"
+                        />
+                        Calculate Repayments
+                      </button>
+                    </form>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                  veritatis nesciunt voluptates mollitia explicabo? Illo
-                  officiis, aliquid aut nobis est laudantium libero sequi ea
-                  minus deleniti corrupti, ut voluptates laboriosam.
+                <div class="col-md-6 p-0">
+                  <div
+                    class="panel-result text-white bg-color-slate-900 rounded-end-5 h-100"
+                  >
+                    <div
+                      class="d-flex flex-column justify-content-center result-content-home h-100"
+                    >
+                      <div class="text-center">
+                        <img
+                          src="./img/illustration-empty.svg"
+                          alt=""
+                          class="mb-3"
+                        />
+                        <h5 class="fw-bold text-center fs-4 mb-3">
+                          Results shown here
+                        </h5>
+                        <p class="text-center color-slate-300">
+                          Complete the form and click “calculate repayments” to
+                          see what your monthly repayments would be.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
