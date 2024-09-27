@@ -50,6 +50,9 @@ body {
 .border-default {
   border-color: var(--slate-700) !important;
 }
+.btn-clear {
+  cursor: pointer;
+}
 .divide {
   width: 100%;
   height: 1px;

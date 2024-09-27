@@ -10,7 +10,7 @@ export const formatNumber = (number) => {
  */
 export const onKeyPress = (e) => {
   const checkValue = e.key;
-
+  console.log(checkValue)
   if (checkValue === ".") {
     if (e.target.value.includes(".")) {
       e.preventDefault();
@@ -31,6 +31,7 @@ export function clearNumber(value) {
  * @param { InputEvent  } e
  */
 export const onInput = (e) => {
+  console.log('inpu')
   const value = e.target.value;
   const realValue = clearNumber(value);
 
@@ -46,7 +47,8 @@ export const onInput = (e) => {
         newValue.push(",");
       }
     });
-
+  
+    console.log(numInt, numDec)
   if (newValue[newValue.length - 1] === ",") {
     newValue.pop();
   }

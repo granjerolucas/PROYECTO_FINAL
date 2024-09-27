@@ -1,8 +1,20 @@
-import { calcMortgage, onInput, onKeyPress } from "./utils.js";
+import { calcMortgage, clearNumber, onInput, onKeyPress } from "./utils.js";
 
 const inputsControl = document.querySelectorAll(".control-number");
 const formCalculator = document.querySelector("#formCalculator");
+const btnClear = document.querySelector(".btn-clear");
+const resUnique = document.querySelector(".result-value-unique");
+const resAcumulated = document.querySelector(".result-value-acumulated");
+const resContentHome = document.querySelector(".result-content-home");
 
+btnClear.addEventListener("click", () => {
+  formCalculator.reset();
+  resUnique.innerHTML = ``;
+  resAcumulated.innerHTML = ``;
+  resContentHome.classList.add("justify-content-center");
+  resContentHome.querySelector(".show-results").classList.add("d-none");
+  resContentHome.querySelector(".show-home").classList.remove("d-none");
+});
 inputsControl.forEach((input) => {
   input.addEventListener("keypress", onKeyPress);
   input.addEventListener("input", onInput);
@@ -10,16 +22,14 @@ inputsControl.forEach((input) => {
 
 formCalculator.addEventListener("submit", (e) => {
   e.preventDefault();
-  const res = calcMortgage(300000, 5.25, 25);
-  console.log(res);
+  // const res = calcMortgage(300000, 5.25, 25);
+  // console.log(res);
   let goSubmit = true;
   const formData = new FormData(e.target);
   const el = e.target.elements;
   for (let i = 0; i < el.length; i++) {
     if (["input"].includes(el.item(i).tagName.toLowerCase())) {
-      if (el.item(i).checkValidity()) {
-        console.log("valid");
-      } else {
+      if (!el.item(i).checkValidity()) {
         // console.log(el.item(i).validationMessage)
         const err = document.querySelector(`#error-${el.item(i).name}`);
         if (err) {
@@ -34,6 +44,16 @@ formCalculator.addEventListener("submit", (e) => {
     }
   }
   if (goSubmit) {
-    calcMortgage(300000, 5.25, 25, 'interest-only');
+    const res = calcMortgage(
+      clearNumber(el.amount.value),
+      clearNumber(el.interest.value),
+      clearNumber(el.term.value),
+      el.mortgagetype.value
+    );
+    resUnique.innerHTML = `£${res.unique}`;
+    resAcumulated.innerHTML = `£${res.acumulated}`;
+    resContentHome.classList.remove("justify-content-center");
+    resContentHome.querySelector(".show-results").classList.remove("d-none");
+    resContentHome.querySelector(".show-home").classList.add("d-none");
   }
 });
