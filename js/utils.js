@@ -58,3 +58,22 @@ export const onInput = (e) => {
     e.target.value = formatValue;
   }
 };
+
+export const calcMortgage = (P, rate, years, type = "repayment") => {
+  const r = rate / 100 / 12;
+  const n = years * 12;
+
+  const M = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  if (type === "interest-only") {
+    let i = M - P / n;
+    return {
+      unique: +i.toFixed(2),
+      acumulated: +(i * n).toFixed(2),
+    };
+  } else {
+    return {
+      unique: +M.toFixed(2),
+      acumulated: +(M * n).toFixed(2),
+    };
+  }
+};
