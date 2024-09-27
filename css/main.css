@@ -60,7 +60,7 @@ body {
 }
 .panel-result {
   color: var(--white);
-  border-bottom-left-radius: calc(var(--bs-border-radius-xxl) * 2) !important;
+  /* border-bottom-left-radius: calc(var(--bs-border-radius-xxl) * 2) !important; */
   padding: 1.7rem 1.4rem;
   .result-content-home {
     img {
@@ -93,7 +93,9 @@ body {
     }
   }
 }
-
+.rounded-card {
+  border-radius: 0px !important;
+}
 .app-calculator {
   .invalid-feedback {
     color: var(--color-red);
@@ -246,31 +248,48 @@ body {
       border-color: var(--color-lime-200);
     }
   }
-  /* Small devices (landscape phones, 576px and up) */
-  @media (min-width: 576px) {
-  }
+}
+.container {
+  padding: 0px;
+}
 
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) {
-    .container-card {
-      max-width: 63rem;
-      .card-body {
-        .p-5 {
-          padding: 2.6rem 2.4rem !important;
-        }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .panel-result {
+    border-bottom-left-radius: calc(var(--bs-border-radius-xxl) * 2) !important;
+    border-top-right-radius: calc(var(--bs-border-radius-xxl) * 1) !important;
+    border-bottom-right-radius: calc(
+      var(--bs-border-radius-xxl) * 1
+    ) !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .rounded-card {
+    border-radius: 2rem !important;
+  }
+  .container-card {
+    max-width: 63rem;
+    .card-body {
+      .p-5 {
+        padding: 2.6rem 2.4rem !important;
       }
     }
   }
+}
 
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .app-calculator {
+    height: 100vh;
   }
+}
 
-  /* X-Large devices (large desktops, 1200px and up) */
-  @media (min-width: 1200px) {
-  }
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
 
-  /* XX-Large devices (larger desktops, 1400px and up) */
-  @media (min-width: 1400px) {
-  }
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }
