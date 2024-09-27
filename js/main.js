@@ -45,9 +45,9 @@ formCalculator.addEventListener("submit", (e) => {
   }
   if (goSubmit) {
     const res = calcMortgage(
-      clearNumber(el.amount.value),
-      clearNumber(el.interest.value),
-      clearNumber(el.term.value),
+      clearNumber(el.amount.value, true),
+      clearNumber(el.interest.value, true),
+      clearNumber(el.term.value, true),
       el.mortgagetype.value
     );
     resUnique.innerHTML = `£${res.unique}`;

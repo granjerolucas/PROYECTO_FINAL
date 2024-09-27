@@ -10,7 +10,7 @@ export const formatNumber = (number) => {
  */
 export const onKeyPress = (e) => {
   const checkValue = e.key;
-  console.log(checkValue)
+  console.log(checkValue);
   if (checkValue === ".") {
     if (e.target.value.includes(".")) {
       e.preventDefault();
@@ -22,8 +22,8 @@ export const onKeyPress = (e) => {
   }
 };
 
-export function clearNumber(value) {
-  return +value.replace(/,/g, "");
+export function clearNumber(value, force = false) {
+  return force ? +value.replace(/,/g, "") : value.replace(/,/g, "");
 }
 
 /**
@@ -31,7 +31,7 @@ export function clearNumber(value) {
  * @param { InputEvent  } e
  */
 export const onInput = (e) => {
-  console.log('inpu')
+  console.log("inpu");
   const value = e.target.value;
   const realValue = clearNumber(value);
 
@@ -47,11 +47,14 @@ export const onInput = (e) => {
         newValue.push(",");
       }
     });
-  
-    console.log(numInt, numDec)
+
+  console.log(numInt, numDec);
+  console.log(newValue)
+
   if (newValue[newValue.length - 1] === ",") {
     newValue.pop();
   }
+  console.log(newValue)
   const formatValue = newValue.reverse().join("");
   // if (numDec)
   if (numDec != undefined) {
