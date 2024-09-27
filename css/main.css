@@ -1,5 +1,6 @@
 :root {
   --color-lime: hsl(61, 70%, 52%);
+  --color-lime-hover: hsl(62.07deg 71.9% 76.27%);
   --color-red: hsl(4, 69%, 50%);
   --white: hsl(0, 0%, 100%);
   --slate-100: hsl(202, 86%, 94%);
@@ -33,7 +34,9 @@
 body {
   background-color: var(--slate-100);
 }
-
+.fw-700 {
+  font-weight: 700;
+}
 .form-check {
   height: 3rem;
   .form-check-label {
@@ -42,16 +45,6 @@ body {
 }
 .border-default {
   border-color: var(--slate-700) !important;
-}
-
-.input-group {
-  input,
-  span {
-    border-color: var(--slate-700);
-  }
-  .input-group-text {
-    font-size: 1.1rem;
-  }
 }
 
 .panel-result {
@@ -66,7 +59,59 @@ body {
 }
 
 .app-calculator {
+  
+  .container-form-check {
+    .form-check-label {
+      font-size: 1.1rem;
+    }
+    &:hover {
+      border-color: var(--color-lime) !important;
+    }
+  }
+  .input-group-text {
+    background-color: var(--slate-100);
+  }
   color: var(--slate-900);
+  .input-group {
+    input,
+    span {
+      border-color: var(--slate-700);
+    }
+
+    &:hover {
+      input,
+      span {
+        border-color: var(--slate-900);
+        /* border-color: yellow; */
+      }
+    }
+    input {
+      font-size: 1.1rem;
+
+      /* &:hover {
+        box-shadow: none;
+        border-color: yellow;
+       
+      } */
+    }
+    & > input:first-child {
+      border-right: none;
+    }
+    span ~ input {
+      border-left: none;
+      /* background-color: green; */
+    }
+
+    .input-group-text {
+      font-size: 1.1rem;
+    }
+
+    &.input-group-lg {
+      .form-control {
+        padding: 0.7rem 1rem;
+      }
+    }
+  }
 
   /* color: var(--slate-700) !important; */
   .input-group-text,
@@ -87,6 +132,11 @@ body {
     background-color: var(--color-lime);
     color: var(--slate-900);
     border-color: var(--slate-300);
+    &:hover {
+      background-color: var(--color-lime-hover);
+      color: var(--slate-900);
+      border-color: var(--color-lime);
+    }
   }
   /* Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {

@@ -31,7 +31,7 @@
                     <div
                       class="d-flex justify-content-between align-items-center"
                     >
-                      <h5 class="card-title fs-4 fw-bold color-slate-900">
+                      <h5 class="card-title fs-4 fw-700 color-slate-900">
                         Mortgage Calculator
                       </h5>
                       <span class="text-decoration-underline color-slate-900"
@@ -45,11 +45,16 @@
                         >
                         <div class="input-group mb-3 input-group-lg">
                           <span
-                            class="input-group-text fw-bold"
+                            class="input-group-text fw-700"
                             id="basic-addon1"
                             >£</span
                           >
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="amount"
+                            class="form-control fw-700"
+                            value="300,000"
+                          />
                         </div>
                       </div>
                       <div class="row">
@@ -65,7 +70,7 @@
                                 id="term"
                               />
                               <span
-                                class="input-group-text fw-bold"
+                                class="input-group-text fw-700"
                                 id="basic-addon2"
                                 >years</span
                               >
@@ -84,7 +89,7 @@
                                 id="interest"
                               />
                               <span
-                                class="input-group-text fw-bold"
+                                class="input-group-text fw-700"
                                 id="basic-addon2"
                                 >%</span
                               >
@@ -94,10 +99,10 @@
                       </div>
 
                       <div class="mb-5">
-                        <label for="exampleInputPassword1" class="form-label"
+                        <label for="repayment" class="form-label"
                           >Mortgage Type</label
                         >
-                        <div class="border border-default rounded-2 px-3 mb-2">
+                        <div class="container-form-check  border border-default rounded-2 px-3 mb-2">
                           <div
                             class="form-check align-content-center form-control-lg"
                           >
@@ -108,14 +113,14 @@
                               id="repayment"
                             />
                             <label
-                              class="form-check-label ms-1 fw-bold"
+                              class="form-check-label ms-1 fw-700"
                               for="repayment"
                             >
                               Repayment
                             </label>
                           </div>
                         </div>
-                        <div class="border border-default rounded-2 px-3">
+                        <div class="container-form-check border border-default rounded-2 px-3">
                           <div
                             class="form-check align-content-center form-control-lg"
                           >
@@ -126,7 +131,7 @@
                               id="interest-only"
                             />
                             <label
-                              class="form-check-label ms-1 fw-bold"
+                              class="form-check-label ms-1 fw-700"
                               for="interest-only"
                             >
                               Interest Only
@@ -162,7 +167,7 @@
                           alt=""
                           class="mb-3"
                         />
-                        <h5 class="fw-bold text-center fs-4 mb-3">
+                        <h5 class="fw-700 text-center fs-4 mb-3 text-white">
                           Results shown here
                         </h5>
                         <p class="text-center color-slate-300">
