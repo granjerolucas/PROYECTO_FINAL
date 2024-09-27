@@ -19,14 +19,19 @@ formCalculator.addEventListener("submit", (e) => {
   // });
   const el = e.target.elements
 for (let i = 0; i < el.length; i++) {
-  // console.log(el[i].name, el[i].value);
   if (['input'].includes(el.item(i).tagName.toLowerCase())) {
-    console.log(el.item(i))
-    console.log(el.item(i).name, el.item(i).value);
     if (el.item(i).checkValidity()) {
       console.log('valid')
     } else {
       console.log('invalid')
+      // console.log(el.item(i).validationMessage)
+      console.log(el.item(i).name)
+      const err = document.querySelector(`#error-${el.item(i).name}`)
+      console.log(err)
+      if (err) {
+        // err.innerHTML = el.item(i).validationMessage
+        err.classList.add('d-block')
+      }
     }
   }
   

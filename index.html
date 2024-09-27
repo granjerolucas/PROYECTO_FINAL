@@ -44,7 +44,9 @@
                         <label for="amount" class="form-label"
                           >Mortgage Amount</label
                         >
-                        <div class="input-group mb-3 input-group-lg">
+                        <div
+                          class="input-group mb-3 input-group-lg has-validation"
+                        >
                           <span
                             class="input-group-text fw-700"
                             id="basic-addon1"
@@ -58,6 +60,9 @@
                             value=""
                             required
                           />
+                          <div class="invalid-feedback mt-2" id="error-amount">
+                            This field is required
+                          </div>
                         </div>
                       </div>
                       <div class="row">
@@ -66,7 +71,7 @@
                             <label for="term" class="form-label"
                               >Mortgage Term</label
                             >
-                            <div class="input-group mb-3 input-group-lg">
+                            <div class="input-group mb-3 input-group-lg has-validation"">
                               <input
                                 type="text"
                                 class="form-control fw-700 control-number"
@@ -80,6 +85,9 @@
                                 id="basic-addon2"
                                 >years</span
                               >
+                              <div class="invalid-feedback mt-2" id="error-term">
+                                This field is required
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -88,7 +96,7 @@
                             <label for="interest" class="form-label"
                               >Interest Rate</label
                             >
-                            <div class="input-group mb-3 input-group-lg">
+                            <div class="input-group mb-3 input-group-lg has-validation"">
                               <input
                                 type="text"
                                 class="form-control fw-700 control-number"
@@ -102,6 +110,9 @@
                                 id="basic-addon2"
                                 >%</span
                               >
+                              <div class="invalid-feedback mt-2 " id="error-interest">
+                                This field is required
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -111,50 +122,56 @@
                         <label for="repayment" class="form-label"
                           >Mortgage Type</label
                         >
+                       <div class="container-check-radio">
                         <div
-                          class="container-form-check border border-default rounded-2 px-3 mb-2"
-                        >
-                          <div
-                            class="form-check align-content-center form-control-lg"
-                          >
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="mortgage-type"
-                              id="repayment"
-                              value="repayment"
-                              required
-                            />
-                            <label
-                              class="form-check-label ms-1 fw-700"
-                              for="repayment"
-                            >
-                              Repayment
-                            </label> 
-                          </div>
-                        </div>
+                        class="container-form-check border border-default rounded-2 px-3 mb-2"
+                      >
                         <div
-                          class="container-form-check border border-default rounded-2 px-3"
+                          class="form-check align-content-center form-control-lg"
                         >
-                          <div
-                            class="form-check align-content-center form-control-lg"
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="mortgage-type"
+                            id="repayment"
+                            value="repayment"
+                            required
+                          />
+                          <label
+                            class="form-check-label ms-1 fw-700"
+                            for="repayment"
                           >
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="mortgage-type"
-                              id="interest-only"
-                              value="interest-only"
-                              required
-                            />
-                            <label
-                              class="form-check-label ms-1 fw-700"
-                              for="interest-only"
-                            >
-                              Interest Only
-                            </label>
-                          </div>
+                            Repayment
+                          </label>
                         </div>
+                      </div>
+                      <div
+                        class="container-form-check border border-default rounded-2 px-3"
+                      >
+                        <div
+                          class="form-check align-content-center form-control-lg"
+                        >
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="mortgage-type"
+                            id="interest-only"
+                            value="interest-only"
+                            required
+                          />
+                          <label
+                            class="form-check-label ms-1 fw-700"
+                            for="interest-only"
+                          >
+                            Interest Only
+                          </label>
+                        </div>
+                      </div>
+                      <div class="invalid-feedback mt-2" id="error-mortgage-type">
+                        This field is required
+                      </div>
+                       </div>
+                       
                       </div>
 
                       <button
