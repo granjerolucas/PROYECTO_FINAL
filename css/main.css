@@ -1,6 +1,7 @@
 :root {
   --color-lime: hsl(61, 70%, 52%);
-  --color-lime-hover: hsl(62.07deg 71.9% 76.27%);
+  --color-lime-hover: hsla(61, 70%, 52%, 1);
+  --color-lime-hover-a: hsla(61, 70%, 52%, 0.2);
   --color-red: hsl(4, 69%, 50%);
   --white: hsl(0, 0%, 100%);
   --slate-100: hsl(202, 86%, 94%);
@@ -59,12 +60,51 @@ body {
 }
 
 .app-calculator {
-  
   .container-form-check {
-    .form-check-label {
-      font-size: 1.1rem;
+    padding-left: 1.2rem !important;
+
+    .form-check {
+      display: flex;
+      align-items: center;
+      .form-check-label {
+        font-size: 1.1rem;
+      }
+      &:hover {
+        border-color: var(--color-lime) !important;
+      }
+
+     
+      .form-check-input {
+        margin-top: 0px;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 1rem;
+        border-width: 2px;
+        border-color: var(--slate-700);
+        /* box-shadow: 0 0 0 1px var(--slate-700); */
+
+        &:checked {
+          /* background-color: var(--color-lime); */
+          background-color: transparent;
+          border-color: var(--color-lime);
+          /* width: 1rem;
+          height: 1rem; */
+          /* background-color: #cb17176e; */
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='hsla(61, 70%, 52%, 1)'/%3e%3c/svg%3e");
+          /* border-color: #f3f1f1; */
+          /* border-width: 2px; */
+          /* border-spacing: 2px; */
+          /* box-shadow: 0 0 0 1px var(--slate-700); */
+          /* outline: red; */
+        }
+        &:focus {
+          box-shadow: none;
+        }
+      }
     }
-    &:hover {
+    &:has(.form-check-input:checked) {
+      border-color: var(--color-lime);
+      background-color: var(--color-lime-hover-a);
       border-color: var(--color-lime) !important;
     }
   }
